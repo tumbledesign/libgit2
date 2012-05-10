@@ -209,4 +209,14 @@ GIT_INLINE(bool) git__isspace(int c)
     return (c == ' ' || c == '\t' || c == '\n' || c == '\f' || c == '\r' || c == '\v');
 }
 
+
+/*
+ * Parse a string value as a boolean, just like Core Git
+ * does.
+ *
+ * Valid values for true are: 'true', 'yes', 'on'
+ * Valid values for false are: 'false', 'no', 'off'
+ */
+extern int git__parse_bool(int *out, const char *value);
+
 #endif /* INCLUDE_util_h__ */
